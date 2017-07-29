@@ -1,3 +1,3 @@
 # AuthorizedHeaderGenerator
-use for Twitter && generate authorized header
-use params generated in https://apps.twitter.com/;
+# Using for Twitter && generate authorized header;
+# Use params generated in https://apps.twitter.com/;
