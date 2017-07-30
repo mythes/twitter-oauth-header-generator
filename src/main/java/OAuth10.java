@@ -132,12 +132,10 @@ class OAuth10 {
                                      Map<String, String> params) throws UnsupportedEncodingException {
         SortedMap<String, String> out = new TreeMap<>();
 
-        percentEncode(headers);
-        out.putAll(headers);
+        out.putAll(percentEncode(headers));
 
         if (params != null) {
-            percentEncode(params);
-            out.putAll(params);
+            out.putAll(percentEncode(params));
         }
 
         StringBuilder sb = new StringBuilder();
@@ -159,19 +157,18 @@ class OAuth10 {
     }
 
 
-    private void percentEncode(Map<String, String> map) {
+    private Map<String,String> percentEncode(Map<String, String> map) {
+        Map <String, String> out= new HashMap<>();
+
         map.forEach((a, b) -> {
             try {
-                percentEncode(a);
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-            try {
-                percentEncode(b);
+                out.put(percentEncode(a),percentEncode(b));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
         });
+
+        return out;
     }
 
 }
