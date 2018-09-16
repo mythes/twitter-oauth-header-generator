@@ -5,7 +5,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.SignatureException;
 import java.util.*;
-
 import org.apache.commons.codec.binary.Base64;
 
 class OAuth10 {
@@ -29,7 +28,6 @@ class OAuth10 {
 
     }
 
-
     private SecureRandom secureRandom = new SecureRandom();
 
     private long generateTimestamp() {
@@ -44,7 +42,6 @@ class OAuth10 {
                 .replaceAll("[^A-Za-z0-9]", "");
 
     }
-
 
     String getAuthorizedHeader(String method, String URI, Map<String, String> params) throws UnsupportedEncodingException, NoSuchAlgorithmException, SignatureException, InvalidKeyException {
 
@@ -155,7 +152,6 @@ class OAuth10 {
 
         return parameterString;
     }
-
 
     private Map<String,String> percentEncode(Map<String, String> map) {
         Map <String, String> out= new HashMap<>();

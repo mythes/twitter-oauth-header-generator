@@ -2,3 +2,6 @@
 *.log
 **/target/
 .idea/
+.classpath
+.project
+.settings/
